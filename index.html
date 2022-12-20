@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Code Playground</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>CODE PLAYGROUND FOR HTML, CSS, JAVASCRIPT</h1>
+    </div>
+    <div class="mainsection">
+        <div class="code_area">
+            <div class="htmlarea">
+                <p>HTML</p>
+                <textarea id="html_area"  oninput="run()"></textarea>
+            </div>
+            <div class="cssarea">
+                <p>CSS</p>
+                <textarea id="css_area" oninput="run()"></textarea>
+            </div>
+            <div class="jsarea">
+                <p>JAVASCRIPT</p>
+                <textarea id="js_area" oninput="run()"></textarea>
+            </div>
+        </div>
+        <div class="output">
+            <h2>OUTPUT</h2>
+            <iframe id="output_area"></iframe>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript">
+        function run() {
+            let html_code = document.getElementById("html_area").value;
+            let css_code = document.getElementById("css_area").value;
+            let js_code = document.getElementById("js_area").value;
+            let output = document.getElementById("output_area").contentWindow.document;
+            output.open();
+            output.write(html_code + "<style>" + css_code + "</style>" + "<script>"+ js_code +"<\/script>");
+            output.close();
+        }
+    </script>
+
+</body>
+
+</html>
