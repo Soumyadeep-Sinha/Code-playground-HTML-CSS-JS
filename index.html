@@ -8,6 +8,7 @@
     <title>Live Code Playground</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
 </head>
 
 <body>
@@ -17,16 +18,16 @@
     <div class="mainsection">
         <div class="code_area">
             <div class="htmlarea">
-                <p>HTML</p>
-                <textarea id="html_area"  oninput="run()"></textarea>
+                <p><i class="fab fa-html5"></i> HTML <button onclick="copyHTML()">Copy</button></p>
+                <textarea id="html_area" oninput="run()" spellcheck="false"></textarea>
             </div>
-            <div class="cssarea">
-                <p>CSS</p>
-                <textarea id="css_area" oninput="run()"></textarea>
+            <div class="cssarea" style="margin-top: 20px;">
+                <p><i class="fab fa-css3-alt"></i> CSS <button onclick="copyCSS()">Copy</button></p>
+                <textarea id="css_area" oninput="run()" spellcheck="false"></textarea>
             </div>
-            <div class="jsarea">
-                <p>JAVASCRIPT</p>
-                <textarea id="js_area" oninput="run()"></textarea>
+            <div class="jsarea" style="margin-top: 20px;">
+                <p><i class="fab fa-js-square"></i> JAVASCRIPT <button onclick="copyJS()">Copy</button></p>
+                <textarea id="js_area" oninput="run()" spellcheck="false"></textarea>
             </div>
         </div>
         <div class="output">
@@ -34,7 +35,7 @@
             <iframe id="output_area"></iframe>
         </div>
     </div>
-    
+
 
     <script type="text/javascript">
         function run() {
@@ -43,8 +44,29 @@
             let js_code = document.getElementById("js_area").value;
             let output = document.getElementById("output_area").contentWindow.document;
             output.open();
-            output.write(html_code + "<style>" + css_code + "</style>" + "<script>"+ js_code +"<\/script>");
+            output.write(html_code + "<style>" + css_code + "</style>" + "<script>" + js_code + "<\/script>");
             output.close();
+        }
+
+        function copyHTML() {
+            let html_code = document.getElementById("html_area");
+            html_code.select();
+            document.execCommand("copy");
+            alert("Text copied to clipboard.")
+        }
+
+        function copyCSS() {
+            let css_code = document.getElementById("css_area");
+            html_code.select();
+            document.execCommand("copy");
+            alert("Text copied to clipboard.")
+        }
+
+        function copyJS() {
+            let js_code = document.getElementById("js_area");
+            html_code.select();
+            document.execCommand("copy");
+            alert("Text copied to clipboard.")
         }
     </script>
 
