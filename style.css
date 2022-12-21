@@ -22,11 +22,12 @@ html,body{
     color: rgb(0, 0, 0);
 }
 .code_area p{
-    width: 20%;
+    width: 30%;
     padding: 10px;
     margin: 0;
-    background-color: #FFFBEB;
+    background-color: #b8c6fe;
     font-weight: bold;
+    border-radius: 0 20px 0 0;
 }
 .output{
     width: 50%;
@@ -52,7 +53,20 @@ textarea{
 
 iframe{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     border: 2px solid grey;
     background-color: white;
+}
+
+button{
+    border: 0px solid white;
+    border-radius: 20px;
+    margin-left: 20px;
+    background-color: #08001b;
+    color: aliceblue;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: #156202;
 }
