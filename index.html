@@ -13,10 +13,13 @@
 
 <body>
     <div class="header">
-        <h1>CODE PLAYGROUND FOR HTML, CSS, JAVASCRIPT</h1>
+        <h2>CODE PLAYGROUND FOR HTML, CSS, JAVASCRIPT
+            <button onclick="darktheme()" class="themes"><i class="fas fa-moon"></i> Dark mode</button>
+            <button onclick="lighttheme()" class="themes"><i class="fas fa-sun"></i> Light mode</button>
+        </h2>
     </div>
     <div class="mainsection">
-        <div class="code_area">
+        <div class="code_area" id="ca">
             <div class="htmlarea">
                 <p><i class="fab fa-html5"></i> HTML <button onclick="copyHTML()">Copy</button></p>
                 <textarea id="html_area" oninput="run()" spellcheck="false"></textarea>
@@ -30,7 +33,7 @@
                 <textarea id="js_area" oninput="run()" spellcheck="false"></textarea>
             </div>
         </div>
-        <div class="output">
+        <div class="output" id="oa">
             <h2>OUTPUT</h2>
             <iframe id="output_area"></iframe>
         </div>
@@ -67,6 +70,42 @@
             html_code.select();
             document.execCommand("copy");
             alert("Text copied to clipboard.")
+        }
+
+        function darktheme(){
+            document.getElementById("html_area").style.backgroundColor = "#282A3A";
+            document.getElementById("css_area").style.backgroundColor = "#282A3A";
+            document.getElementById("js_area").style.backgroundColor = "#282A3A";
+            document.getElementById("html_area").style.color = "white";
+            document.getElementById("css_area").style.color = "white";
+            document.getElementById("js_area").style.color = "white";
+            document.getElementById("ca").style.backgroundColor = "#404258";
+            document.getElementById("oa").style.backgroundColor = "#404258";
+            document.getElementById("oa").style.color = "white";
+
+            document.getElementById("html_area").style.transition = "2s"
+            document.getElementById("css_area").style.transition = "2s"
+            document.getElementById("js_area").style.transition = "2s"
+            document.getElementById("ca").style.transition = "2s"
+            document.getElementById("oa").style.transition = "2s"
+        }
+
+        function lighttheme(){
+            document.getElementById("html_area").style.backgroundColor = "#F5EBE0";
+            document.getElementById("css_area").style.backgroundColor = "#F5EBE0";
+            document.getElementById("js_area").style.backgroundColor = "#F5EBE0";
+            document.getElementById("html_area").style.color = "rgb(0, 0, 0)";
+            document.getElementById("css_area").style.color = "rgb(0, 0, 0)";
+            document.getElementById("js_area").style.color = "rgb(0, 0, 0)";
+            document.getElementById("ca").style.backgroundColor = "#F5D5AE";
+            document.getElementById("oa").style.backgroundColor = "#F5D5AE";
+            document.getElementById("oa").style.color = "black";
+
+            document.getElementById("html_area").style.transition = "2s"
+            document.getElementById("css_area").style.transition = "2s"
+            document.getElementById("js_area").style.transition = "2s"
+            document.getElementById("ca").style.transition = "2s"
+            document.getElementById("oa").style.transition = "2s"
         }
     </script>
 
