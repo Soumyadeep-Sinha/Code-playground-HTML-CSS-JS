@@ -4,25 +4,41 @@ html,body{
 }
 .header{
     padding: 10px;
-    text-align: center;
+    text-align: left;
     color: white;
-    background-color: #251B37;
+    background-color: #2D033B;
+    /*background-color: #251B37;*/
+}
+.header h2{
+    margin-left: 10px;
+}
+
+.themes{
+    padding: 10px;
+    width: 200px;
+    background-color: cadetblue;
+}
+
+.themes:hover{
+    background-color: rgb(34, 105, 107);
+    transition: 0.5s;
 }
 
 .mainsection{
     display:flex ;
-    flex-direction: row;
+    /*flex-direction: row;*/
 }
 .code_area{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     padding: 20px;
-    background-color: #08001b;
+    /*background-color: #08001b;*/
+    background-color: #F5D5AE;
     color: rgb(0, 0, 0);
 }
 .code_area p{
-    width: 30%;
+    width: 40%;
     padding: 10px;
     margin: 0;
     background-color: #b8c6fe;
@@ -30,13 +46,12 @@ html,body{
     border-radius: 0 20px 0 0;
 }
 .output{
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    padding: 20px;
-    background-color: #282A3A;
-    color:white
+    padding: 0 20px 20px 20px;
+    background-color: #F5D5AE;
+    color:black;
 }
 .output h2{
     text-align: center;
@@ -46,9 +61,11 @@ textarea{
     width: 100%;
     word-wrap: break-word;
     resize: vertical;
-    background-color: #263159;
-    color: greenyellow;
+    background-color: #F5EBE0;
+    color: rgb(45, 45, 45);
     font-size: 18px;
+    border: 0px solid transparent;
+    border-radius: 0 8px 8px 8px;
 }
 
 iframe{
